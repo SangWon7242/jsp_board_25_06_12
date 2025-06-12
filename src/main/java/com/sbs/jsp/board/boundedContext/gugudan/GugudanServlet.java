@@ -22,5 +22,13 @@ public class GugudanServlet extends HomeServlet {
     for(int i = 1; i <= limit; i++) {
       rq.appendBody("<div>%d * %d = %d</div>\n".formatted(dan, i, dan * i));
     }
+
+    rq.appendBody("""
+        <div class="box-1"></div>
+        
+        <style>
+          .box-1 { width: 200px; height: 200px; background-color: red; }
+        </style>
+        """);
   }
 }
