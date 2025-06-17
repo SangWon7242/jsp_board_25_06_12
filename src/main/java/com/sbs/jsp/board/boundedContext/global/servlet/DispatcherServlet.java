@@ -1,0 +1,35 @@
+package com.sbs.jsp.board.boundedContext.global.servlet;
+
+import com.sbs.jsp.board.boundedContext.article.controller.ArticleController;
+import com.sbs.jsp.board.boundedContext.global.base.Rq;
+import com.sbs.jsp.board.boundedContext.global.base.container.Container;
+import com.sbs.jsp.board.boundedContext.member.controller.MemberController;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
+
+// usr로 시작하는 모든 요청
+@WebServlet("/usr/*")
+public class DispatcherServlet extends HttpServlet {
+  @Override
+  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    Rq rq = new Rq(req, resp);
+
+    MemberController memberController = Container.memberController;
+    ArticleController articleController = Container.articleController;
+
+    // http://localhost:8080/usr/article/write
+    // 위 요청에서 /usr/article/write 를 뽑아온다.
+    String url = req.getRequestURI();
+    System.out.println(req.getRequestURI());
+
+    switch (url) {
+      case "/usr/article/list" -> articleController.showList(rq);
+      case "/usr/member/join" -> memberController.showJoin(rq);
+    }
+  }
+}

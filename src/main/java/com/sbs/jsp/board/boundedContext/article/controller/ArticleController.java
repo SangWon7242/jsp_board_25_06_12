@@ -1,0 +1,9 @@
+package com.sbs.jsp.board.boundedContext.article.controller;
+
+import com.sbs.jsp.board.boundedContext.global.base.Rq;
+
+public class ArticleController {
+  public void showList(Rq rq) {
+    rq.appendBody("게시물 리스트");
+  }
+}
