@@ -1,10 +1,14 @@
 package com.sbs.jsp.board.boundedContext.global.base;
 
+import com.sbs.jsp.board.boundedContext.article.dto.Article;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 public class Rq {
   private final HttpServletRequest req;
@@ -47,6 +51,20 @@ public class Rq {
     try {
       resp.getWriter().append(str);
     } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  public void setAttr(String attrName, Object value) {
+    req.setAttribute(attrName, value);
+  }
+
+  public void view(String path) {
+    RequestDispatcher requestDispatcher = req.getRequestDispatcher("/jsp/" + path + ".jsp");
+    // /jsp/usr/article/list.jsp
+    try {
+      requestDispatcher.forward(req, resp);
+    } catch (ServletException | IOException e) {
       throw new RuntimeException(e);
     }
   }
