@@ -22,6 +22,10 @@ public class ArticleController {
         .forEach(i -> articleList.add(new Article(i, "제목" + i, "내용" + i)));
   }
 
+  public void showWrite(Rq rq) {
+    rq.view("usr/article/write");
+  }
+
   public void showList(Rq rq) {
     // 원본을 기반으로 복사본을 만들어 연결
     List<Article> articles = new ArrayList<>(articleList);
