@@ -25,7 +25,6 @@ public class DispatcherServlet extends HttpServlet {
     // http://localhost:8080/usr/article/write
     // 위 요청에서 /usr/article/write 를 뽑아온다.
     String url = req.getRequestURI();
-    System.out.println(req.getRequestURI());
 
     switch (url) {
       case "/usr/article/list" -> articleController.showList(rq);
