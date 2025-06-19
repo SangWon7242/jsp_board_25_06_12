@@ -5,34 +5,9 @@
 
 <%@ include file="../../common/head.jspf" %>
 
+
+
 <h1>게시물 리스트</h1>
-
-<style>
-  table {
-      border-collapse: collapse;
-      width: 100%;
-      margin: 20px 0;
-  }
-
-  th, td {
-      border: 1px solid #ddd;
-      padding: 12px;
-      text-align: left;
-  }
-
-  th {
-      background-color: #f2f2f2;
-      font-weight: bold;
-  }
-
-  tr:nth-child(even) {
-      background-color: #f9f9f9;
-  }
-
-  tr:hover {
-      background-color: #f5f5f5;
-  }
-</style>
 
 <table>
   <colgroup>

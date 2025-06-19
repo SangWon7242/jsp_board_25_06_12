@@ -16,21 +16,12 @@
     <!-- 테일윈드 css 불러오기 -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- 공통 css 불러오기 -->
+    <c:set value="${pageContext.request.contextPath}/resources/css" var="cssPath" />
+    <link rel="stylesheet" href="${cssPath}/style.css">
+
   </head>
   <body class="min-h-screen flex flex-col">
-
-  <style>
-    @font-face {
-      font-family: 'GmarketSansMedium';
-      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-    }
-
-    html > body {
-      font-family: 'GmarketSansMedium';
-    }
-  </style>
 
   <!-- 전체 사이트를 감싸는 용도 -->
   <div class="site-wrap flex-grow flex flex-col">
@@ -49,5 +40,5 @@
     </header>
 
     <!-- 본문 -->
-    <main class="flex-grow p-6">
+    <main class="flex-grow p-6 flex flex-col">
       <!-- 여기에 콘텐츠가 들어갑니다 -->
