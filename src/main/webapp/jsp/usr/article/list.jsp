@@ -51,7 +51,7 @@
       <tr>
         <td>${article.id}</td>
         <td>
-          <a href="detail?id=${article.id}">${article.subject}</a>
+          <a href="detail/free/${article.id}">${article.subject}</a>
         </td>
         <td>기타</td>
       </tr>

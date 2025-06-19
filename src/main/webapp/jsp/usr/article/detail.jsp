@@ -80,4 +80,8 @@
     <label>내용</label>
     <div class="value" style="white-space: pre-line;">${article.content}</div>
   </div>
+
+  <div class="button-group">
+    <a href="/usr/article/list">리스트로 이동</a>
+  </div>
 </div>
