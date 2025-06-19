@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
+<%@ include file="../../common/head.jspf" %>
+
 <style>
   * {
       margin: 0;
@@ -215,3 +217,5 @@
     </div>
   </form>
 </div>
+
+<%@ include file="../../common/foot.jspf" %>

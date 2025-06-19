@@ -3,6 +3,8 @@
 <!-- Jakarta EE 9+ 새로운 방식 -->
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
+<%@ include file="../../common/head.jspf" %>
+
 <h1>게시물 리스트</h1>
 
 <style>
@@ -59,3 +61,5 @@
   </tbody>
 </table>
 
+
+<%@ include file="../../common/foot.jspf" %>
