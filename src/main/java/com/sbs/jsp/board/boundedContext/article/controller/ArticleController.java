@@ -10,11 +10,15 @@ import java.util.stream.IntStream;
 
 public class ArticleController {
   private List<Article> articleList;
+  private long lastId;
 
   public ArticleController() {
     articleList = new ArrayList<>();
 
     makeTestData();
+    
+    // getLast() : 전체 리스트에서 -1한 리스트 요소값을 가져옴
+    lastId = articleList.getLast().getId();
   }
 
   private void makeTestData() {
@@ -35,5 +39,39 @@ public class ArticleController {
     rq.setAttr("articles", articles);
 
     rq.view("usr/article/list");
+  }
+
+  public void doWrite(Rq rq) {
+    String subject = rq.getParam("subject", "");
+
+    if(subject.trim().isEmpty()) {
+      rq.appendBody("""
+                    <script>
+                     alert("제목을 입력해주세요.");
+                    </script>
+                    """);
+      return;
+    }
+
+    String content = rq.getParam("content", "");
+    if(content.trim().isEmpty()) {
+      rq.appendBody("""
+                    <script>
+                     alert("내용을 입력해주세요.");
+                    </script>
+                    """);
+      return;
+    }
+
+    long id = ++lastId;
+
+    Article article = new Article(id, subject, content);
+    articleList.add(article);
+
+    rq.appendBody("""
+                  <div>%d번 게시물 생성</div>
+                  <div>subject : %s</div>
+                  <div>content : %s</div>
+                  """.formatted(id, subject, content));
   }
 }

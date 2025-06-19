@@ -22,14 +22,22 @@ public class DispatcherServlet extends HttpServlet {
     MemberController memberController = Container.memberController;
     ArticleController articleController = Container.articleController;
 
-    // http://localhost:8080/usr/article/write
-    // 위 요청에서 /usr/article/write 를 뽑아온다.
-    String url = req.getRequestURI();
-
-    switch (url) {
-      case "/usr/article/write" -> articleController.showWrite(rq);
-      case "/usr/article/list" -> articleController.showList(rq);
-      case "/usr/member/join" -> memberController.showJoin(rq);
+    switch (rq.getMethod()) {
+      case "GET":
+        switch (rq.getUrlPath()) {
+          case "/usr/article/write" -> articleController.showWrite(rq);
+          case "/usr/article/list" -> articleController.showList(rq);
+          case "/usr/member/join" -> memberController.showJoin(rq);
+        }
+      case "POST":
+        switch (rq.getUrlPath()) {
+          case "/usr/article/write" -> articleController.doWrite(rq);
+        }
     }
+  }
+
+  @Override
+  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    doGet(req, resp);
   }
 }

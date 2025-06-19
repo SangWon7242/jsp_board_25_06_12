@@ -201,7 +201,7 @@
 <div class="container">
   <h1>게시물 작성</h1>
 
-  <form onsubmit="ArticleSave_submitForm(this); return false;">
+  <form method="POST" onsubmit="ArticleSave_submitForm(this); return false;">
     <div>
       <label for="subject">제목</label>
       <input type="text" id="subject" name="subject" placeholder="제목을 입력해주세요.">

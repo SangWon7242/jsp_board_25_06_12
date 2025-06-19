@@ -59,6 +59,15 @@ public class Rq {
     req.setAttribute(attrName, value);
   }
 
+  public String getUrlPath() {
+    return req.getRequestURI();
+  }
+
+  public String getMethod() {
+    // URL 요청에 대한 HTTP 메서드를 가져옴
+    return req.getMethod();
+  }
+
   public void view(String path) {
     RequestDispatcher requestDispatcher = req.getRequestDispatcher("/jsp/" + path + ".jsp");
     // /jsp/usr/article/list.jsp
