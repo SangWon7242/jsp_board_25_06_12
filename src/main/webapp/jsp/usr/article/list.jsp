@@ -50,7 +50,9 @@
     <c:forEach var="article" items="${articles}">
       <tr>
         <td>${article.id}</td>
-        <td>${article.subject}</td>
+        <td>
+          <a href="detail?id=${article.id}">${article.subject}</a>
+        </td>
         <td>기타</td>
       </tr>
     </c:forEach>
