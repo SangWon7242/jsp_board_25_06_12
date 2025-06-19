@@ -68,6 +68,12 @@ public class Rq {
     return req.getMethod();
   }
 
+  public String getActionPath() {
+    String[] bits = req.getRequestURI().split("/");
+    // /usr/article/list -> ['', 'usr', 'article', 'list'];
+    return "/%s/%s/%s".formatted(bits[1], bits[2], bits[3]);
+  }
+
   public void view(String path) {
     RequestDispatcher requestDispatcher = req.getRequestDispatcher("/jsp/" + path + ".jsp");
     // /jsp/usr/article/list.jsp

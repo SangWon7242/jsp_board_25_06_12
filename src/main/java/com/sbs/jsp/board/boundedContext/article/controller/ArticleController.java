@@ -5,10 +5,7 @@ import com.sbs.jsp.board.boundedContext.article.service.ArticleService;
 import com.sbs.jsp.board.boundedContext.global.base.Rq;
 import com.sbs.jsp.board.boundedContext.global.base.container.Container;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class ArticleController {
   private ArticleService articleService;
@@ -43,6 +40,7 @@ public class ArticleController {
     }
 
     String content = rq.getParam("content", "");
+
     if(content.trim().isEmpty()) {
       rq.appendBody("""
                     <script>
