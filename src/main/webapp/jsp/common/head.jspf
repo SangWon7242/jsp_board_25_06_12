@@ -9,11 +9,45 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JSP 게시판</title>
+
+    <!-- daisyui 불러오기 -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+    <!-- 테일윈드 css 불러오기 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
   </head>
-  <body>
+  <body class="min-h-screen flex flex-col">
+
+  <style>
+    @font-face {
+      font-family: 'GmarketSansMedium';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    html > body {
+      font-family: 'GmarketSansMedium';
+    }
+  </style>
 
   <!-- 전체 사이트를 감싸는 용도 -->
-  <div class="site-wrap">
-    <header class="top-bar">
-      공통 헤더
+  <div class="site-wrap flex-grow flex flex-col">
+    <!-- Header -->
+    <header class="navbar bg-base-200 shadow-md px-4">
+      <div class="flex-1">
+        <a href="/" class="text-xl font-bold text-primary">MyBoard</a>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal px-1">
+          <li><a href="/usr/article/write" class="hover:text-primary">게시물 작성</a></li>
+          <li><a href="/usr/article/list" class="hover:text-primary">게시물 리스트</a></li>
+          <li><a href="/usr/member/join" class="hover:text-primary">회원 가입</a></li>
+        </ul>
+      </div>
     </header>
+
+    <!-- 본문 -->
+    <main class="flex-grow p-6">
+      <!-- 여기에 콘텐츠가 들어갑니다 -->
