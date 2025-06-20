@@ -20,6 +20,9 @@
     <c:set value="${pageContext.request.contextPath}/resources/css" var="cssPath" />
     <link rel="stylesheet" href="${cssPath}/style.css">
 
+    <!-- 공통 js 불러오기 -->
+    <script defer src="${pageContext.request.contextPath}/resources/js/script.js"></script>
+
   </head>
   <body class="min-h-screen flex flex-col">
 
