@@ -120,6 +120,14 @@ public class Rq {
     return "/%s/%s/%s".formatted(bits[1], bits[2], bits[3]);
   }
 
+  public String getRoutedMethod() {
+    String method = getParam("_method", "");
+
+    if(!method.isEmpty()) return method.toUpperCase();
+
+    return req.getMethod();
+  }
+
   public void view(String path) {
     RequestDispatcher requestDispatcher = req.getRequestDispatcher("/jsp/" + path + ".jsp");
     // /jsp/usr/article/list.jsp

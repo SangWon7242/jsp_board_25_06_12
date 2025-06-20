@@ -27,4 +27,4 @@ function articleDelete__init() {
 	});
 }
 
-articleDelete__init(); // 함수 실행
+// articleDelete__init(); // 함수 실행
