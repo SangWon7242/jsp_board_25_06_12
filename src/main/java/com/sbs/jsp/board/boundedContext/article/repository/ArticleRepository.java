@@ -52,7 +52,17 @@ public class ArticleRepository {
   public void modify(long id, String subject, String content) {
     Article article = findById(id);
 
+    if(article == null) return;
+
     article.setSubject(subject);
     article.setContent(content);
+  }
+
+  public void delete(long id) {
+    Article article = findById(id);
+
+    if(article == null) return;
+
+    articleList.remove(article);
   }
 }
