@@ -18,3 +18,13 @@ function ArticleSave_submitForm(form) {
 
   form.submit();
 }
+
+function articleDelete__init() {
+	const deleteBtn = document.getElementById("delete-button");
+
+  deleteBtn.addEventListener("click", function () {
+		if (confirm("정말 삭제하시겠습니까?")) this.nextElementSibling.submit();
+	});
+}
+
+articleDelete__init(); // 함수 실행
