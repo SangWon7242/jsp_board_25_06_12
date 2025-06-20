@@ -18,7 +18,7 @@
       <textarea id="content" name="content" placeholder="내용을입력해주세요."></textarea>
     </div>
     <div class="button-group">
-      <button type="submit">작성</button>
+      <button type="submit" class="btn btn-primary">작성</button>
     </div>
   </form>
 </div>

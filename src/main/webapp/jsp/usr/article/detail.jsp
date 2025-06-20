@@ -25,9 +25,9 @@
     <div class="value" style="white-space: pre-line;">${article.content}</div>
   </div>
 
-  <div class="button-group flex gap-x-3 items-center justify-center">
-    <a href="/usr/article/modify/free/${article.id}">수정</a>
-    <a href="/usr/article/list">리스트로 이동</a>
+  <div class="button-group">
+    <a href="/usr/article/modify/free/${article.id}" class="btn btn-primary">수정</a>
+    <a href="/usr/article/list" class="btn btn-secondary">리스트로 이동</a>
   </div>
 </div>
 

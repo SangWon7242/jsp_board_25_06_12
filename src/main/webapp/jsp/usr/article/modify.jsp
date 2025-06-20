@@ -21,8 +21,8 @@
       <textarea id="content" name="content" placeholder="내용을입력해주세요.">${article.content}</textarea>
     </div>
     <div class="button-group">
-      <button type="submit">수정</button>
-      <a href="/usr/article/list">취소</a>
+      <button type="submit" class="btn btn-primary">수정</button>
+      <a href="/usr/article/list" class="btn btn-secondary">취소</a>
     </div>
   </form>
 </div>
