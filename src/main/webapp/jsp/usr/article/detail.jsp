@@ -27,7 +27,7 @@
 
   <div class="button-group">
     <a href="/usr/article/modify/free/${article.id}" class="btn btn-primary">수정</a>
-    <a href="/usr/article/delete/free/${article.id}" class="btn btn-secondary">삭제</a>
+    <a onclick="if(!confirm('정말 삭제하시겠습니까?')) return false;" href="/usr/article/delete/free/${article.id}" class="btn btn-secondary">삭제</a>
     <a href="/usr/article/list" class="btn btn-accent">리스트로 이동</a>
   </div>
 </div>
