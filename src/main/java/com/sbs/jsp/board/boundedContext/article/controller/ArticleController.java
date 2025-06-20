@@ -65,4 +65,24 @@ public class ArticleController {
     rq.setAttr("article", article);
     rq.view("usr/article/detail");
   }
+
+  public void showModify(Rq rq) {
+    long id = rq.getLongPathValueByIndex(1, 0);
+
+    if(id == 0) {
+      rq.historyBack("올바른 요청이 아닙니다.");
+      return;
+    }
+
+    Article article = articleService.findById(id);
+
+    if(article == null) {
+      rq.historyBack("%d번 게시물이 존재하지 않습니다.".formatted(id));
+      return;
+    }
+
+    rq.setAttr("article", article);
+
+    rq.view("usr/article/modify");
+  }
 }
